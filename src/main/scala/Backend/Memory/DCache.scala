@@ -291,7 +291,7 @@ class DCache extends Module {
     }
 
     // return buffer
-    val rawEn = c2s3.wreq && c1s3.rreq && tagIndex(c2s3.paddr) === tagIndex(c1s3.paddr)
+    val rawEn = c2s3.wreq && c1s3.rreq && tagIndex(c2s3.paddr) === tagIndex(c1s3.paddr) && !c2s3.uncache
     when(fsm.io.cc.rbufClear){
         rbufMask := Mux(rawEn, wstrbShift, 0.U)
     }.elsewhen(rawEn){

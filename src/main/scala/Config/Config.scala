@@ -54,7 +54,7 @@ object Issue{
     val nis          = 5
     val arithNiq     = 12
     val arithNissue  = 3
-    val muldivNiq    = 4
+    val muldivNiq    = 6
     val muldivNissue = 1
     val lsuNiq       = 6
     val lsuNissue    = 1

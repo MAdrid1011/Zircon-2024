@@ -87,7 +87,7 @@ class DCacheFSM extends Module {
                 when(!io.cc.uncache && io.cc.hit.orR) {
                     io.cc.lruUpd := ~io.cc.hit
                 }
-                when(!(io.cc.uncache || io.cc.hit.orR)) {
+                when(!io.cc.uncache || !io.cc.hit.orR) {
                     io.cc.rbufClear := true.B
                 }
             }

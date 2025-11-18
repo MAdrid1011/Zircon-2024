@@ -2,7 +2,7 @@ PWD := $(shell pwd)
 SCALA_SRC := $(shell find src -name "*.scala")
 all: verilog
 
-USE_SBT := 0
+USE_SBT := 1
 
 verilog: $(SCALA_SRC)
 ifeq ($(USE_SBT), 1)

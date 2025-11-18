@@ -275,4 +275,6 @@ Y P在论文里提出了一种同时预测多个分支的策略，我试图尝�
 
 1. Bug修复：在执行Clang-22编译的FFT程序时，处理器出现过久未提交指令的情况。观察波型发现，由于错误的利用DCache的FSM生成的lock信号，导致Storbuffer的eptyn寄存器在lock时，eptyn会deq.valid的时候被错误的复原，导致后续认为没有待提交请求。所以我对sb的deq.valid加了条件，也就是当lock的时候不会给把valid信号送入sb。（p.s. 感谢王越同学对Bug的报告）
 
+## 2025-11-18
 
+1. Bug修复：之前一直没有好好的测试过uncache load，发现了一个问题：uncache时应该直接清掉rbufMask，因为现在发现，当两个外设地址处于同一个Cache行时，之前提出的“最新store可以直接更新rbuf”的思路会把rbufMask寄存器锁死，导致非可缓存读不能把数据写回rbuf（rbuf中甚至是之前非可缓存写出的数据）

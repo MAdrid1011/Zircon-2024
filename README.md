@@ -6,7 +6,7 @@ Zircon-2024是一款RISC-V处理器，由Zircon项目迭代而来。
 
 ## 处理器架构
 
-[处理器架构主页](https://mazirui2001.github.io/Zircon-2024-Web/Zircon2024/)
+[处理器架构主页](https://madrid1011.github.io/Zircon-2024-Web/Zircon2024/)
 
 ## 目录概览
 
